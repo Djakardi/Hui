@@ -3,27 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <title>Рисовалка</title>
-  <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<h2>Risovarka</h2>
+  <button id="pencil">Каранлаваш</button>
+  <button id="eraser">Стиралок</button>
+  <button id="rect">Квадраций</button>
+  <button id="circle">Круговая </button>
+  <button id="clear">Стирка</button>
 
+  <label for="color-input">Колораж</label>
+  <input type="color" id="color-input" value="#0000ff" />
 
-<button class="active" onclick="selectTool('pencil', this)">Каранлаваш</button>
-<button onclick="selectTool('eraser', this)">Хуйня стираемая</button>
-<button onclick="selectTool('rect',   this)">Квдаратцкий</button>
-<button onclick="selectTool('circle', this)">Кругоеб</button>
-<button onclick="selectTool('line',   this)">Полоса ебаная</button>
-<button onclick="clearCanvas()">Снести нахуй</button>
+  <label for="size-input">Размер:</label>
+  <input type="range" id="size-input" min="1" max="40" value="5" />
 
-<br>
-
-Color: <input type="color" id="color" value="#0000ff">
-
-Size: <input type="range" id="size" min="1" max="40" value="5">
-
-<canvas id="canvas" width="1920" height="1080"></canvas>
+    <canvas id="canvas"></canvas>
+    <script type="module" src="state.js"></script>
+    <script type="module" src="draw.js"></script>
+    <script type="module" src="panel.js"></script>
+    <script type="module" src="main.js"></script>
 
 </body>
-</html>
+    </html>
