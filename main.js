@@ -5,7 +5,6 @@ import { RisovarkaState } from "./state.js";
 window.onload = function () {
   const canvas = document.getElementById("canvas");
   
-  // Правильно устанавливаем размер canvas
   canvas.width = window.innerWidth - 20;
   canvas.height = window.innerHeight - 200;
 
