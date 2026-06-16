@@ -2,6 +2,7 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
+<<<<<<< HEAD
   <title>Рисовалка</title>
  <link rel="stylesheet" href="style.css" />
 </head>
@@ -27,3 +28,32 @@
 
 </body>
     </html>
+=======
+  <title>Risovarka</title>
+ <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="toolbar">
+    <button id="pencil">Карандыр</button>
+    <button id="eraser">Стиралка</button>
+    <button id="rect">Квадрацкий</button>
+    <button id="circle">Кругоёб</button>
+    <button id="clear">Снести нахуй</button>
+
+    <label for="color-input">цветовой стояк:</label>
+    <input type="color" id="color-input" value="#0000ff" />
+
+    <label for="size-input">Размер:</label>
+    <input type="range" id="size-input" min="1" max="40" value="5" />
+  </div>
+
+  <canvas id="canvas"></canvas>
+  
+  <script type="module" src="state.js"></script>
+  <script type="module" src="draw.js"></script>
+  <script type="module" src="panel.js"></script>
+  <script type="module" src="main.js"></script>
+
+</body>
+</html>
+>>>>>>> 73e19c9 (Huetaaa)
