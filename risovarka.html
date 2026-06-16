@@ -1,34 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>Paint</title>
-  <style>
-    body {
-      font-family: Arial;
-      padding: 10px;
-    }
-
-    button {
-      padding: 8px 14px;
-      font-size: 15px;
-      margin: 4px;
-      cursor: pointer;
-    }
-
-    button.active {
-      background: rgb(13, 148, 148);
-      color: white;
-    }
-
-    canvas {
-      display: block;
-      border: 2px solid #0977dd;
-      background: white;
-      cursor: crosshair;
-      margin-top: 10px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Рисовалка</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -50,116 +25,5 @@ Size: <input type="range" id="size" min="1" max="40" value="5">
 
 <canvas id="canvas" width="1920" height="1080"></canvas>
 
-<script>
-
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
-
-var tool = 'pencil'; 
-var drawing = false;   
-var x1 = 0, y1 = 0;     
-var snapshot = null;   
-
-
-function selectTool(name, btn) {
-  tool = name;
-
-  var buttons = document.querySelectorAll('button');
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove('active');
-  }
-
-  btn.classList.add('active');
-}
-
-
-
-function clearCanvas() {
-  ctx.fillStyle = 'white';
-  ctx.fillRect(0, 0, 1920, 1080);
-}
-
-
-
-canvas.onmousedown = function(e) {
-  drawing = true;
-
-  x1 = e.offsetX;
-  y1 = e.offsetY;
-
-  if (tool === 'pencil' || tool === 'eraser') {
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-  }
-
-  if (tool === 'rect' || tool === 'circle' || tool === 'line') {
-    snapshot = ctx.getImageData(0, 0, 1920, 1080);
-  }
-};
-
-canvas.onmousemove = function(e) {
-  if (drawing === false) return; 
-
-  var x2 = e.offsetX;
-  var y2 = e.offsetY;
-
-  ctx.strokeStyle = document.getElementById('color').value;
-  ctx.fillStyle   = document.getElementById('color').value;
-  ctx.lineWidth   = document.getElementById('size').value;
-  ctx.lineCap     = 'round';
-
-  if (tool === 'pencil') {
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(x2, y2);
-  }
-
-  if (tool === 'eraser') {
-    ctx.strokeStyle = 'white';
-    ctx.lineWidth   = document.getElementById('size').value * 3;
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(x2, y2);
-  }
-
-  if (tool === 'line') {
-    ctx.putImageData(snapshot, 0, 0);
-    ctx.beginPath();
-    ctx.moveTo(x1, y1);
-    ctx.lineTo(x2, y2);
-    ctx.stroke();
-  }
-
-  if (tool === 'rect') {
-    ctx.putImageData(snapshot, 0, 0);
-    ctx.beginPath();
-    ctx.strokeRect(x1, y1, x2 - x1, y2 - y1);
-    ctx.fillRect(x1, y1, x2 - x1, y2 - y1);
-  }
-
-  if (tool === 'circle') {
-    ctx.putImageData(snapshot, 0, 0);
-    ctx.beginPath();
-    ctx.arc(x1, y1, Math.abs(x2 - x1), 0, 2 * Math.PI);
-    ctx.fill();
-    ctx.stroke();
-  }
-};
-
-canvas.onmouseup = function() 
-{
-  drawing = false;
-};
-
-canvas.onmouseleave = function()
-{
-  drawing = false;
-};
-
-clearCanvas();
-
-</script>
 </body>
 </html>
