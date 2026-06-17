@@ -1,31 +1,4 @@
-<<<<<<< HEAD
-    body { 
-      font-family: Arial;
-      padding: 10px;
-    }
 
-    button {
-      padding: 8px 14px;
-      font-size: 15px;
-      margin: 4px;
-      cursor: pointer;
-    }
-
-    button.active {
-      background: rgb(0, 196, 196);
-      color: white;
-    }
-
-    canvas {
-      display: block;
-      border: 2px solid #000000;
-      background: white;
-      cursor: crosshair;
-      margin-top: 10px;
-      width: 100%;
-      height: 100%;
-    }
-=======
 * {
   margin: 0;
   padding: 0;
@@ -84,4 +57,4 @@ input[type="color"],
 input[type="range"] {
   margin-right: 10px;
 }
->>>>>>> 73e19c9 (Huetaaa)
+

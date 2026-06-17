@@ -42,10 +42,8 @@ export class RisovarkaDraw {
     this.currentY = y;
 
     if (this.state.tool === ToolsEnum.PENCIL || this.state.tool === ToolsEnum.ERASER) {
-<<<<<<< HEAD
-=======
+
       this._applyStyle();
->>>>>>> 73e19c9 (Huetaaa)
       this.ctx.beginPath();
       this.ctx.moveTo(x, y);
     }
@@ -130,8 +128,4 @@ export class RisovarkaDraw {
 
     this.ctx.beginPath(); 
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 73e19c9 (Huetaaa)

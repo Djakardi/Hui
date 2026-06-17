@@ -6,10 +6,8 @@ export function btnsRegister(state, draw) {
     "eraser": ToolsEnum.ERASER,
     "rect":   ToolsEnum.RECT,
     "circle": ToolsEnum.CIRCLE,
-<<<<<<< HEAD
     "line":   ToolsEnum.LINE,
-=======
->>>>>>> 73e19c9 (Huetaaa)
+
   };
 
   Object.keys(btnsMap).forEach((btnId) => {
@@ -41,8 +39,6 @@ export function btnsRegister(state, draw) {
 
   colorInput.value = state.color;
   sizeInput.value  = state.pencilSize;
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 73e19c9 (Huetaaa)
+
+

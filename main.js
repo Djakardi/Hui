@@ -2,13 +2,6 @@ import { RisovarkaDraw } from "./draw.js";
 import { btnsRegister  } from "./panel.js";
 import { RisovarkaState } from "./state.js";
 
-<<<<<<< HEAD
-window.onload = function () {
-  const canvas = document.getElementById("canvas");
-  
-  canvas.width = window.innerWidth - 20;
-  canvas.height = window.innerHeight - 200;
-=======
 function resizeCanvas(canvas, draw) {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -20,32 +13,24 @@ window.onload = function () {
   
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
->>>>>>> 73e19c9 (Huetaaa)
 
   const colorInput = document.getElementById("color-input");
   const sizeInput  = document.getElementById("size-input");
 
   const state = new RisovarkaState(colorInput.value, parseInt(sizeInput.value));
   const draw  = new RisovarkaDraw(canvas, state);
-
-<<<<<<< HEAD
-=======
-  
+z
   colorInput.value = state.color;
   sizeInput.value = state.pencilSize;
 
->>>>>>> 73e19c9 (Huetaaa)
   draw.clearCanvas();
 
   btnsRegister(state, draw);
 
-<<<<<<< HEAD
-=======
   window.addEventListener("resize", () => {
     resizeCanvas(canvas, draw);
   });
 
->>>>>>> 73e19c9 (Huetaaa)
   let isDrawing = false;
 
   canvas.addEventListener("mousedown", (e) => {
@@ -69,8 +54,4 @@ window.onload = function () {
     isDrawing = false;
     draw.onDrawEnd();
   });
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 73e19c9 (Huetaaa)
