@@ -25,7 +25,7 @@ window.onload = function () {
 
   draw.clearCanvas();
 
-  btnsRegister(state, draw);s
+  btnsRegister(state, draw);
 
   window.addEventListener("resize", () => {
     resizeCanvas(canvas, draw);
