@@ -19,13 +19,13 @@ window.onload = function () {
 
   const state = new RisovarkaState(colorInput.value, parseInt(sizeInput.value));
   const draw  = new RisovarkaDraw(canvas, state);
-z
+
   colorInput.value = state.color;
   sizeInput.value = state.pencilSize;
 
   draw.clearCanvas();
 
-  btnsRegister(state, draw);
+  btnsRegister(state, draw);s
 
   window.addEventListener("resize", () => {
     resizeCanvas(canvas, draw);
